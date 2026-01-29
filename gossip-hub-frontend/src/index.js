@@ -1,16 +1,4 @@
-// 1. Unified Polyfills (MUST BE AT THE VERY TOP)
-import { Buffer } from 'buffer/';
-import process from 'process';
 
-if (typeof window !== 'undefined') {
-  window.Buffer = Buffer;
-  window.process = process;
-  // Ensure basic process properties exist
-  window.process.env = window.process.env || {};
-  window.process.env.NODE_ENV = window.process.env.NODE_ENV || 'production';
-}
-
-// 2. Standard React Imports
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
