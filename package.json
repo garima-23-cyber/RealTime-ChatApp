@@ -1,0 +1,40 @@
+{
+  "name": "gossiphub",
+  "version": "1.0.0",
+  "description": "This is a starter pack for creating React projects with Tailwind CSS configured. It uses React version **18.2** and Tailwind CSS version **3.2**.",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm run dev --prefix server",
+    "client": "npm start --prefix gossip-hub-frontend",
+    "dev": "npm-run-all --parallel server client"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.11.2",
+    "buffer": "^6.0.3",
+    "concurrently": "^9.2.1",
+    "crypto-browserify": "^3.12.1",
+    "date-fns": "^4.1.0",
+    "https-browserify": "^1.0.0",
+    "lucide-react": "^0.562.0",
+    "next-tick": "^1.1.0",
+    "os-browserify": "^0.3.0",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "react": "^19.2.4",
+    "react-app-rewired": "^2.2.1",
+    "react-dom": "^19.2.4",
+    "react-hot-toast": "^2.6.0",
+    "react-icons": "^5.5.0",
+    "react-redux": "^9.2.0",
+    "react-toastify": "^11.0.5",
+    "simple-peer": "^9.11.1",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
