@@ -1,5 +1,5 @@
 // 1. Unified Polyfills (MUST BE AT THE VERY TOP)
-import { Buffer } from 'buffer';
+import { Buffer } from 'buffer/';
 import process from 'process';
 
 if (typeof window !== 'undefined') {
