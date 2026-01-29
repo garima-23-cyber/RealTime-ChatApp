@@ -2,8 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { useSocket } from "./SocketContext";
 import { useAuth } from "./AuthContext";
 import { fetchNotifications, markAsRead } from "../api/notificationAPI";
-import toast from "react-hot-toast";
-
+import { toast } from "react-toastify";
 const NotificationContext = createContext();
 
 export const NotificationProvider = ({ children }) => {
