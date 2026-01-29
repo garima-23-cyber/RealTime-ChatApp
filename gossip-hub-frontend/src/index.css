@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- 🌌 Global Root & Reset --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+:root {
+  --syncra-pink: 255, 45, 85;
+}
+
+body {
+  @apply bg-[#050505] text-white antialiased overflow-x-hidden;
+  /* Eliminates the "flicker" during 3D transforms */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- 🧊 Advanced 3D Core --- */
+
+.perspective-1000 {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Apply to cards to give them a "lifted" physical feel */
+.preserve-3d {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.parallax-layer {
+  will-change: transform;
+  pointer-events: none;
+  transition: transform 0.15s cubic-bezier(0.2, 0.49, 0.32, 0.99);
+}
+
+/* --- 🧪 Hyper-Glassmorphism (3D Layering) --- */
+
+.glass-3d {
+  @apply backdrop-blur-3xl bg-white/[0.02] border border-white/10;
+  box-shadow: 
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.05), /* Top Specular edge */
+    0 20px 40px -15px rgba(0, 0, 0, 0.7);      /* Deep Shadow */
+  position: relative;
+}
+
+/* Adds a 3D "Rim Light" effect to elements */
+.rim-light {
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05), inset 0 0 20px rgba(255, 255, 255, 0.02);
+}
+
+/* --- 💫 System Animations --- */
+
+/* Mechanical rotation for orbiters */
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(15px) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(15px) rotate(-360deg); }
+}
+.animate-orbit {
+  animation: orbit 25s linear infinite;
+}
+
+/* Subtle data-glitch for transmissions */
+@keyframes transmission-glitch {
+  0% { clip-path: inset(40% 0 61% 0); transform: translate(-2px, 2px); }
+  20% { clip-path: inset(92% 0 1% 0); transform: translate(1px, -3px); }
+  40% { clip-path: inset(43% 0 1% 0); transform: translate(-1px, 3px); }
+  60% { clip-path: inset(25% 0 58% 0); transform: translate(3px, 1px); }
+  80% { clip-path: inset(54% 0 7% 0); transform: translate(-2px, -2px); }
+  100% { clip-path: inset(58% 0 43% 0); transform: translate(2px, 1px); }
+}
+.hover-glitch:hover {
+  animation: transmission-glitch 0.3s steps(2, end) infinite;
+}
+
+/* --- 🌑 Syncra Custom Elements --- */
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+}
+
+.custom-scrollbar:hover::-webkit-scrollbar-thumb {
+  background: rgba(var(--syncra-pink), 0.3);
+  box-shadow: 0 0 10px rgba(var(--syncra-pink), 0.2);
+}
+
+/* Status Pulse for "Live" Nodes */
+.status-pulse {
+  @apply relative flex h-2 w-2;
+}
+.status-pulse-inner {
+  @apply animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75;
+}
