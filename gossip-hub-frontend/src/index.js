@@ -10,7 +10,11 @@ import { SocketProvider } from "./context/SocketContext";
 import { NotificationProvider } from "./context/NotificationContext";
 
 
+import process from 'process';
 
+if (typeof window !== 'undefined') {
+  window.process = process;
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(

@@ -6,7 +6,7 @@ const SocketContext = createContext(null);
 
 export const SocketProvider = ({ children }) => {
     const [socket, setSocket] = useState(null);
-    const { user, token } = useAuth(); // Assuming token is also in AuthContext
+    const { user, token } = useAuth(); 
 
     useEffect(() => {
         // Use either the passed token or localStorage
