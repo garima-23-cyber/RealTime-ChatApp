@@ -2,11 +2,8 @@
 
 > **Military-Grade Real-Time Communication Protocol**  
 > *“Identity is fluid. Security is absolute.”*
-> 
->🔗 **Live Demo:** https://chat-app-frontend-beta-sandy.vercel.app/login
-> 
+>🔗 **Live Demo:** https://chat-app-frontend-beta-sandy.vercel.app/login 
 📦 **Backend API:** https://chatapp-backend-tvvc.onrender.com
-> 
 📂 **Source Code:** https://github.com/garima-23-cyber/RealTime-ChatApp
 
 **Syncra Engine** is a **high-performance, low-latency real-time communication system** engineered for **secure peer-to-peer interaction**. Built on the **MERN stack with WebRTC**, it delivers encrypted **text, voice, and video communication** inside a **cyberpunk glassmorphism Cyber-HUD**, optimized for speed, reliability, and security.
