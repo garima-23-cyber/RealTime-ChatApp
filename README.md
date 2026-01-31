@@ -1,31 +1,128 @@
-# React & Tailwind CSS Starter Pack
+# 🛰️ SYNCRA ENGINE // v1.0.4
 
-This is a starter pack for creating React projects with Tailwind CSS configured. It uses React version **18.2** and Tailwind CSS version **3.2**.
+> **Military-Grade Real-Time Communication Protocol**  
+> *“Identity is fluid. Security is absolute.”*
 
-## Usage
+**Syncra Engine** is a **high-performance, low-latency real-time communication system** engineered for **secure peer-to-peer interaction**. Built on the **MERN stack with WebRTC**, it delivers encrypted **text, voice, and video communication** inside a **cyberpunk glassmorphism Cyber-HUD**, optimized for speed, reliability, and security.
 
-This starter pack includes a basic setup for using **Tailwind CSS with React**. To start building your own components and styles, follow these steps:
+---
 
-1. Clone the repository to your local machine.
-    ```sh
-    git clone https://github.com/thepranaygupta/react-tailwind-css-starter-pack.git
-    ```
+## ⚡ Core Identity & Security Layer
 
-1. Install the required packages.
-    ```sh
-    cd react-tailwind-css-starter-pack
-    npm install
-    ```
+### 🛡️ Secure Authentication Node
 
-1. Start the development server.
-    ```sh
-    npm start
-    ```
-1. Open the project in your browser at [`http://localhost:3000`](http://localhost:3000) to view your project.
-1. Create your React components and add your styles using Tailwind classes. You can also create new CSS files and import them into your components.
+- **OTP Handshake Protocol** – Email-based 6-digit verification for hardened onboarding  
+- **JWT Authorization Core** – Stateless, persistent authentication using industry-standard JSON Web Tokens  
+- **Identity Provisioning Engine**
+  - Automatic avatar generation  
+  - Globally unique **Node ID** per user  
 
-The project is set up to use `postcss-cli` to process your CSS files. You can add your own `tailwind.config.js` file to customize your Tailwind setup.
+---
 
-## Contributing
+## 📼 Transmission & Communication Modules
 
-Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or a pull request.
+### 🔊 P2P Voice & Video
+- Ultra-low-latency **WebRTC** powered peer-to-peer media channels  
+- HD audio/video streams with adaptive bitrate handling  
+
+### 🎙️ Signal Recording
+- Built-in voice-note capture  
+- Instant encrypted bitstream uplink  
+
+### 📦 Data Packet Sharing
+- Drag-and-drop image & file sharing  
+- Tactical preview layer before dispatch  
+
+### ☠️ Matrix Purge
+- **Global message neutralization**  
+- Deletes messages across all connected peers in real time  
+
+---
+
+## 👻 Ghost Protocol (Exclusive)
+
+> *Disappear without disconnecting.*
+
+- **Masked Identity Mode** – Obfuscates presence and metadata  
+- **Vibe Syncing** – Real-time UI state synchronization across connected nodes  
+
+---
+
+## 📟 Tactical HUD (UI / UX)
+
+- **Notification Pulse**
+  - Friend requests  
+  - Secure handshakes  
+  - System & network events  
+- **Mesh Network Search** – Dynamic user discovery  
+- **Firewall Controls** – Block / Unblock nodes  
+- **Identity Configuration Console**
+  - Bio editing  
+  - DOB management  
+  - Avatar upload  
+
+---
+
+## 🛠️ Technical Architecture
+
+Syncra Engine follows a **distributed, context-driven architecture** to guarantee real-time synchronization and fault tolerance.
+
+| Layer | Technology |
+|------|-----------|
+| Frontend | React 19, Tailwind CSS, Framer Motion |
+| Real-Time Layer | Socket.io (WebSocket Protocol) |
+| P2P Communication | WebRTC, Simple-Peer |
+| Backend | Node.js, Express (MERN Stack) |
+| Database | MongoDB, Mongoose ODM |
+| Cloud | Vercel (Frontend), Render (Backend) |
+
+---
+
+## 🎞️ System Interface Preview
+
+> *A tactical UI engineered for immersion.*
+
+- **Cyber-HUD Design** – Glassmorphism panels with neon accents  
+- **Motion System** – Tactical surge animations during boot & signal transitions  
+- **Immersion Layer**
+  - Parallax depth  
+  - CRT scanlines  
+  - HUD overlays  
+
+---
+
+## 📸 Screenshots
+
+> Screenshots are hosted directly using GitHub or external image links
+
+### 🔐 Authentication & Identity
+![Login Screen](<img width="1892" height="910" alt="Screenshot 2026-01-31 123007" src="https://github.com/user-attachments/assets/984088f0-9a9c-42b0-a50c-de3c194b13dd" />
+)
+![Signin Screen](<img width="1882" height="912" alt="Screenshot 2026-01-31 123826" src="https://github.com/user-attachments/assets/d8aaeaa0-bb64-42cf-ba18-b339e5a8e80f" />
+)
+
+### 💬 Real-Time Chat & Media
+![dashboard](<img width="1871" height="900" alt="Screenshot 2026-01-31 123035" src="https://github.com/user-attachments/assets/360a2fd5-1f4a-4acf-a492-96d219f0491e" />
+)
+![Chat Interface](<img width="1879" height="908" alt="Screenshot 2026-01-31 123057" src="https://github.com/user-attachments/assets/25cde56e-5558-4a95-9be7-81965f751a26" />
+)
+![Voice Call](<img width="1881" height="903" alt="Screenshot 2026-01-31 123159" src="https://github.com/user-attachments/assets/b6a668f2-6d89-4b83-893d-b5d5c73e84c8" />
+)
+![Video Call](<img width="1889" height="910" alt="Screenshot 2026-01-31 123143" src="https://github.com/user-attachments/assets/d686ebd7-2533-42e7-b38f-15f45b1cdfb9" />
+)
+
+### 👻 Ghost Protocol & Settings
+![Ghost Mode](<img width="1915" height="926" alt="Screenshot 2026-01-31 123115" src="https://github.com/user-attachments/assets/07fe8628-9e95-47ba-a5ce-50b63c907a35" />
+)
+![Profile Settings](<img width="1890" height="910" alt="Screenshot 2026-01-31 123229" src="https://github.com/user-attachments/assets/a41d03a3-9296-4ab4-ab65-c275ba1fd7b1" />
+)
+
+---
+
+## 🚀 Rapid Deployment
+
+### 1️⃣ Initialize Local Node
+```bash
+git clone https://github.com/your-username/syncra-engine.git
+cd syncra-engine
+npm install
