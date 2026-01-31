@@ -4,7 +4,7 @@ import { useAuth } from "../../context/AuthContext";
 import { useMediaRecorder } from "../../hooks/useMediaRecorder";
 import { uploadMedia } from "../../api/messageAPI";
 import { toast } from "react-toastify"; // ✅ Switched to your new Toastify system
-import { IoMdSend, IoMdMic, IoMdSquare, IoMdAttach, IoMdPulse } from "react-icons/io";
+import { IoMdSend, IoMdMic,  IoMdAttach, IoMdPulse } from "react-icons/io";
 
 const MessageInput = ({ chatId, setMessages, isGhostMode, isBlocked }) => {
     const [text, setText] = useState("");
