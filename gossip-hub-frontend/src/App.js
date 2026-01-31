@@ -15,6 +15,7 @@ import ProfilePage from "./pages/profilePage";
 import { useAuth } from "./context/AuthContext";
 import CallModal from "./components/Calling/CallModal";
 import ParallaxBackground from "./components/Shared/ParallaxBackground";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [isBooting, setIsBooting] = useState(true);
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <>
+    <ToastContainer/>
       {(isBooting || authLoading) ? (
         <SplashScreen />
       ) : (
