@@ -96,26 +96,18 @@ Syncra Engine follows a **distributed, context-driven architecture** to guarante
 > Screenshots are hosted directly using GitHub or external image links
 
 ### 🔐 Authentication & Identity
-![Login Screen](<img width="1892" height="910" alt="Screenshot 2026-01-31 123007" src="https://github.com/user-attachments/assets/984088f0-9a9c-42b0-a50c-de3c194b13dd" />
-)
-![Signin Screen](<img width="1882" height="912" alt="Screenshot 2026-01-31 123826" src="https://github.com/user-attachments/assets/d8aaeaa0-bb64-42cf-ba18-b339e5a8e80f" />
-)
+![Login Screen](https://github.com/user-attachments/assets/984088f0-9a9c-42b0-a50c-de3c194b13dd)
+![Signin Screen](https://github.com/user-attachments/assets/d8aaeaa0-bb64-42cf-ba18-b339e5a8e80f)
 
 ### 💬 Real-Time Chat & Media
-![dashboard](<img width="1871" height="900" alt="Screenshot 2026-01-31 123035" src="https://github.com/user-attachments/assets/360a2fd5-1f4a-4acf-a492-96d219f0491e" />
-)
-![Chat Interface](<img width="1879" height="908" alt="Screenshot 2026-01-31 123057" src="https://github.com/user-attachments/assets/25cde56e-5558-4a95-9be7-81965f751a26" />
-)
-![Voice Call](<img width="1881" height="903" alt="Screenshot 2026-01-31 123159" src="https://github.com/user-attachments/assets/b6a668f2-6d89-4b83-893d-b5d5c73e84c8" />
-)
-![Video Call](<img width="1889" height="910" alt="Screenshot 2026-01-31 123143" src="https://github.com/user-attachments/assets/d686ebd7-2533-42e7-b38f-15f45b1cdfb9" />
-)
+![dashboard](https://github.com/user-attachments/assets/360a2fd5-1f4a-4acf-a492-96d219f0491e)
+![Chat Interface](https://github.com/user-attachments/assets/25cde56e-5558-4a95-9be7-81965f751a26)
+![Voice Call](https://github.com/user-attachments/assets/b6a668f2-6d89-4b83-893d-b5d5c73e84c8)
+![Video Call](https://github.com/user-attachments/assets/d686ebd7-2533-42e7-b38f-15f45b1cdfb9)
 
 ### 👻 Ghost Protocol & Settings
-![Ghost Mode](<img width="1915" height="926" alt="Screenshot 2026-01-31 123115" src="https://github.com/user-attachments/assets/07fe8628-9e95-47ba-a5ce-50b63c907a35" />
-)
-![Profile Settings](<img width="1890" height="910" alt="Screenshot 2026-01-31 123229" src="https://github.com/user-attachments/assets/a41d03a3-9296-4ab4-ab65-c275ba1fd7b1" />
-)
+![Ghost Mode](https://github.com/user-attachments/assets/07fe8628-9e95-47ba-a5ce-50b63c907a35)
+![Profile Settings](https://github.com/user-attachments/assets/a41d03a3-9296-4ab4-ab65-c275ba1fd7b1)
 
 ---
 
