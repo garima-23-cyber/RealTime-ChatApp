@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { updateDisplayPicture, deleteDisplayPicture } from "../../api/profileAPI";
-import { IoMdCamera, IoMdTrash, IoMdRefresh } from "react-icons/io";
+import { IoMdCamera, IoMdTrash } from "react-icons/io";
 import { toast } from "react-toastify"; // ✅ Switched to Toastify
 import Loader from "../common/loader"; 
 import SuccessCheck from "../common/SuccessCheck"; 

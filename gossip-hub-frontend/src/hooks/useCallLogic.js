@@ -2,6 +2,14 @@ import { useState, useRef, useCallback, useEffect } from "react";
 import Peer from "simple-peer";
 import { toast } from "react-toastify"; 
 
+const iceConfig = {
+        iceServers: [
+            { urls: 'stun:stun.l.google.com:19302' },
+            { urls: 'stun:stun1.l.google.com:19302' },
+            { urls: 'stun:stun2.l.google.com:19302' },
+        ]
+    };
+
 export const useCallLogic = (socket, user) => {
     const [stream, setStream] = useState(null);
     const [receivingCall, setReceivingCall] = useState(false);
@@ -24,13 +32,7 @@ export const useCallLogic = (socket, user) => {
         dialAudio.current.loop = true;
     }, []);
 
-    const iceConfig = {
-        iceServers: [
-            { urls: 'stun:stun.l.google.com:19302' },
-            { urls: 'stun:stun1.l.google.com:19302' },
-            { urls: 'stun:stun2.l.google.com:19302' },
-        ]
-    };
+    
 
     const handleCleanup = useCallback(() => {
         if (stream) {

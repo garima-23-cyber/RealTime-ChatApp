@@ -3,17 +3,19 @@ import logo from "../../assets/Logo/logo1.png";
 import { HiOutlineShieldCheck } from "react-icons/hi";
 import { IoMdPulse } from "react-icons/io";
 
-const SplashScreen = () => {
-  const [status, setStatus] = useState("INITIALIZING SECURE VIBE");
-  const [progress, setProgress] = useState(0);
-
-  const statusMessages = [
+const statusMessages = [
     "LOADING RSA PROTOCOLS...",
     "HANDSHAKE MODULE READY",
     "DECRYPTING SECURE VAULT",
     "SYNCING SYMMETRIC KEYS",
     "STABLIZING TUNNEL..."
   ];
+
+const SplashScreen = () => {
+  const [status, setStatus] = useState("INITIALIZING SECURE VIBE");
+  const [progress, setProgress] = useState(0);
+
+  
 
   useEffect(() => {
     let currentMessage = 0;

@@ -41,7 +41,7 @@ export const SocketProvider = ({ children }) => {
                 setSocket(null);
             }
         }
-    }, [user, token]);
+    }, [user, token,socket]);
 
     // ✅ FIX: Pass as an object so destructuring { socket } works
     return (
