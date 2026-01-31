@@ -1,21 +1,23 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useSocket } from "./SocketContext";
 import { useAuth } from "./AuthContext";
+import { useContact } from "./ContactContext"; // 🛰️ Import Contact Context
 import { fetchNotifications, markAsRead } from "../api/notificationAPI";
 import { toast } from "react-toastify";
+
 const NotificationContext = createContext();
 
 export const NotificationProvider = ({ children }) => {
     const [notifications, setNotifications] = useState([]);
-    const {socket} = useSocket();
+    const { socket } = useSocket();
     const { user } = useAuth();
+    const { refreshContacts } = useContact(); // 🔍 Pull refresh function
 
     useEffect(() => {
         if (user) {
             const loadNotifications = async () => {
                 try {
                     const res = await fetchNotifications();
-                    // Ensure we handle cases where notifications might be undefined
                     setNotifications(res.data.notifications || []);
                 } catch (err) {
                     console.error("Syncra: Failed to load notifications", err);
@@ -23,54 +25,59 @@ export const NotificationProvider = ({ children }) => {
             };
             loadNotifications();
         } else {
-            // Clear notifications on logout
             setNotifications([]);
         }
     }, [user]);
 
     useEffect(() => {
-    // ✅ Guard: Only attach listeners if socket is defined
-    if (socket) {
-        console.log("🔔 Notification System: Linked to Socket");
+        if (socket) {
+            console.log("🔔 Notification System: Linked to Socket");
 
-        socket.on("receive_notification", (notification) => {
-            // Your logic to handle new notifications
-            setNotifications((prev) => [notification, ...prev]);
-            toast.success(`New message from ${notification.sender.username}`);
-        });
+            socket.on("receive_notification", (notification) => {
+                setNotifications((prev) => [notification, ...prev]);
+                
+                // 🛠️ NEW LOGIC: If the notification is a friend request or acceptance,
+                // we refresh the contacts so the Search Bar and Friend List update instantly.
+                if (notification.type === "FRIEND_REQUEST" || notification.type === "FRIEND_ACCEPTED") {
+                    refreshContacts();
+                }
 
-        return () => {
-            socket.off("receive_notification");
-        };
-    }
-}, [socket]);
+                toast.success(notification.content || "New notification received");
+            });
+
+            return () => {
+                socket.off("receive_notification");
+            };
+        }
+    }, [socket, refreshContacts]);
 
     const handleMarkAsRead = async (id = null) => {
-    try {
-        // If id is null, we send an empty object (backend handles this as 'Mark All')
-        // If id exists, we send the specific key the backend expects
-        const payload = id ? { notificationId: id } : {};
-        
-        await markAsRead(payload);
+        try {
+            const payload = id ? { notificationId: id } : {};
+            await markAsRead(payload);
 
-        // Update UI state immediately
-        setNotifications((prev) =>
-            prev.map((n) => 
-                (id === null || n._id === id) ? { ...n, isRead: true } : n
-            )
-        );
-    } catch (err) {
-        // This is where your console error was coming from
-        console.error("Syncra: UI Update failed", err);
-    }
-  };
+            setNotifications((prev) =>
+                prev.map((n) =>
+                    (id === null || n._id === id) ? { ...n, isRead: true } : n
+                )
+            );
+
+            // 🚀 If you just marked a "FRIEND_ACCEPTED" notification as read, 
+            // it's a good time to sync contacts again.
+            refreshContacts();
+
+        } catch (err) {
+            console.error("Syncra: UI Update failed", err);
+        }
+    };
 
     return (
         <NotificationContext.Provider value={{ 
             notifications, 
             unreadCount: notifications.filter(n => !n.isRead).length,
             handleMarkAsRead,
-            setNotifications // Useful if you want to delete notifications manually
+            setNotifications,
+            refreshNotifications: () => {} // You could add a manual refresh if needed
         }}>
             {children}
         </NotificationContext.Provider>

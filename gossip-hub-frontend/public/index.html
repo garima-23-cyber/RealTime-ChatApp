@@ -8,18 +8,6 @@
     <meta name="description" content="Syncra Engine - Chat App" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/buffer/6.0.3/buffer.min.js"></script>
-    <script>
-      // Manually attaching polyfills to the window so Webpack doesn't have to resolve them
-      window.Buffer = window.Buffer || buffer.Buffer;
-      window.process = { 
-        env: { NODE_ENV: 'production' }, 
-        nextTick: (fn) => setTimeout(fn, 0),
-        cwd: () => '/'
-      };
-    </script>
-
     <title>GossipHub | Syncra Engine</title>
   </head>
   <body>

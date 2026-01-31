@@ -5,28 +5,33 @@ const LogoutModal = ({ isOpen, onClose, onConfirm }) => {
     if (!isOpen) return null;
 
     return (
-        <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4">
-            {/* 🌑 Backdrop Blur */}
+        /* 1. Full Screen Wrapper with Higher Z-Index */
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 isolate">
+            
+            {/* 2. Backdrop - Fixed the "touch and hide" bug by separating logic */}
             <div 
-                className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-in fade-in duration-300" 
+                className="absolute inset-0 bg-black/90 backdrop-blur-md transition-opacity duration-300" 
                 onClick={onClose} 
             />
 
-            {/* 🛡️ Modal Card */}
-            <div className="relative w-full max-w-sm bg-[#0D1117] border border-white/10 rounded-[2.5rem] p-8 shadow-2xl animate-in zoom-in-95 duration-300">
+            {/* 3. Modal Card - Added stopPropagation so clicks inside don't trigger onClose */}
+            <div 
+                onClick={(e) => e.stopPropagation()} 
+                className="relative w-full max-w-sm bg-[#0D1117] border border-white/10 rounded-[2.5rem] p-8 shadow-[0_0_100px_rgba(0,0,0,1)] transform transition-all duration-300 scale-100 opacity-100 ring-1 ring-white/5"
+            >
                 
                 {/* Close Button */}
                 <button 
                     onClick={onClose}
-                    className="absolute top-6 right-6 text-zinc-600 hover:text-white transition-colors"
+                    className="absolute top-6 right-6 text-zinc-600 hover:text-white transition-colors p-2"
                 >
                     <IoMdClose size={20} />
                 </button>
 
                 <div className="flex flex-col items-center text-center space-y-6">
-                    {/* Warning Icon */}
-                    <div className="w-16 h-16 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center shadow-[0_0_30px_rgba(239,68,68,0.1)]">
-                        <IoMdPower className="text-red-500 text-3xl" />
+                    {/* Warning Icon with Persistent Glow */}
+                    <div className="w-16 h-16 rounded-full bg-red-500/10 border border-red-500/20 flex items-center justify-center shadow-[0_0_30px_rgba(239,68,68,0.2)]">
+                        <IoMdPower className="text-red-500 text-3xl animate-pulse" />
                     </div>
 
                     <div className="space-y-2">
@@ -42,7 +47,7 @@ const LogoutModal = ({ isOpen, onClose, onConfirm }) => {
                     <div className="flex flex-col w-full gap-3 mt-4">
                         <button 
                             onClick={onConfirm}
-                            className="w-full py-4 bg-red-600 hover:bg-red-500 text-white rounded-2xl font-black uppercase text-[10px] tracking-[0.3em] transition-all shadow-lg shadow-red-900/20 active:scale-95"
+                            className="w-full py-4 bg-red-600 hover:bg-red-500 text-white rounded-2xl font-black uppercase text-[10px] tracking-[0.3em] transition-all shadow-lg shadow-red-900/40 active:scale-95"
                         >
                             Confirm De-auth
                         </button>
