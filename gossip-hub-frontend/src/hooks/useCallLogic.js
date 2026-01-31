@@ -1,6 +1,6 @@
 import { useState, useRef, useCallback, useEffect } from "react";
 import Peer from "simple-peer";
-import { toast } from "react-toastify"; // ✅ Switched to your new Toastify system
+import { toast } from "react-toastify"; 
 
 export const useCallLogic = (socket, user) => {
     const [stream, setStream] = useState(null);
