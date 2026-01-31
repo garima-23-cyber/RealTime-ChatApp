@@ -1,31 +1,17 @@
 import { Buffer } from 'buffer';
-
-
+import process from 'process';
+import Stream from 'stream-browserify';
 
 window.global = window;
-
 window.Buffer = Buffer;
+window.process = process;
 
-// Use the browser-specific versions of process and stream
-
-window.process = require('process/browser');
-
-window.process.env.NODE_ENV = 'development';
-
-
-
-// Ensure nextTick exists for the stream internal logic
-
+// Standardize process environment
+window.process.env = window.process.env || {};
+window.process.env.NODE_ENV = 'production';
 window.process.nextTick = (fn, ...args) => setTimeout(() => fn(...args), 0);
 
-
-
-// Provide a more robust stream polyfill
-
-const Stream = require('stream-browserify');
-
+// Fix Stream for WebRTC/Video
 if (Stream.Readable && !Stream.Readable.prototype._readableState) {
-
     Stream.Readable.prototype._readableState = {};
-
 }

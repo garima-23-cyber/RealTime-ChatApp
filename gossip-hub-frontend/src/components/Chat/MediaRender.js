@@ -126,7 +126,7 @@ const MediaRenderer = ({ type, url, fileName, duration }) => {
                     <IoMdAlert className="text-2xl animate-pulse" />
                     <div className="flex flex-col gap-1">
                         <span className="text-[10px] font-black uppercase tracking-widest leading-none">Unknown_Protocol</span>
-                        <a href={url} target="_blank" className="text-[8px] font-mono underline opacity-50 hover:opacity-100">Access_Direct_Source</a>
+                        <a href={url} target="_blank" rel="noreferrer"  className="text-[8px] font-mono underline opacity-50 hover:opacity-100">Access_Direct_Source</a>
                     </div>
                 </div>
             );
